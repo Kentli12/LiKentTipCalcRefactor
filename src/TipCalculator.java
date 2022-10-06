@@ -2,7 +2,7 @@ public class TipCalculator {
 
     //instance variables
     private int numPeople;
-    private int tipPercentage;
+    private double tipPercentage;
     private double totalBillBeforeTip;
 
     //constructor
@@ -15,9 +15,11 @@ public class TipCalculator {
 
     //getter method
     public double getTotalBillBeforeTip() {
+
         return totalBillBeforeTip;
     }
-    public int getTipPercentage() {
+    public double getTipPercentage() {
+
         return tipPercentage;
     }
 
@@ -28,19 +30,23 @@ public class TipCalculator {
 
     //return method
     public double tipAmount() {
-        return (tipPercentage * totalBillBeforeTip);
+        return ((tipPercentage * totalBillBeforeTip)/100);
     }
     public double totalBill () {
         return (tipAmount() + totalBillBeforeTip);
     }
     public double perPersonCostBeforeTip() {
-         return (totalBillBeforeTip/numPeople);
+
+        return (totalBillBeforeTip/numPeople);
     }
     public double perPersonTipAmount () {
+
         return (tipAmount()/numPeople);
     }
     public double perPersonTotalCost () {
-        return ((perPersonCostBeforeTip() + perPersonTipAmount())/numPeople);
+
+        return (perPersonCostBeforeTip() + perPersonTipAmount());
     }
+
 }
 
